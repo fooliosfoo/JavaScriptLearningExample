@@ -1,4 +1,4 @@
-/* TEMP */
+// TEMP 
 
 /* this application validates a user's entries for joining
 */
@@ -22,3 +22,5 @@ $("email_addressl_error" ) .firstChild.nodeValue ~
 }
 /* validate the second entry
 */
+
+//Examples
