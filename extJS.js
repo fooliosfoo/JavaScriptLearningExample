@@ -4,4 +4,8 @@
 
 //Examples
 //print();
-alert(window.location); // Displays the URL of the current paqe
+//alert(window.location); // Displays the URL of the current paqe
+var entryA = prompt("Enter any value";
+alert (entryA);
+entryA = parseInt(entryA);
+alert (entryA);
