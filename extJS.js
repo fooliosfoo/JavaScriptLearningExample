@@ -4,4 +4,4 @@
 
 //Examples
 //print();
-alert(window.location);
+alert(window.location); // Displays the URL of the current paqe
