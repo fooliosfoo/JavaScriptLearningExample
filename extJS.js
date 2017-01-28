@@ -1,6 +1,7 @@
 // TEMP 
 
-window.alert ( "This is a test of the alert method " ) ;
+//window.alert ( "This is a test of the alert method " ) ;
 
 //Examples
 //print();
+alert(window.location);
