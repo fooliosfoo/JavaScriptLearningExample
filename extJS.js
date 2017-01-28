@@ -13,5 +13,5 @@ alert(entryA);
 */
 //method within the parameters of another method
 var entryA = prompt("Enter any value", 12345.6789);
-alert(entryA); // displays 12345. 6789
+alert(entryA); // displays 12345.6789
 alert(parseint(entryA)); // displays 12345
