@@ -61,5 +61,5 @@ function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 function khFunction() {
-  //does nothing atm when the kh value field is clicked on
+  window.alert ( "khFunction fired because the kh value field was clicked onto" ) ;
 }
