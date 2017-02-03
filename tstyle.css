@@ -1,4 +1,10 @@
+/*all paragraphs*/
 p {
     color: red;
     text-align: center;
+}
+/*id*/
+#para1 {
+    text-align: center;
+    color: red;
 }
