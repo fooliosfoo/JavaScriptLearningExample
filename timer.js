@@ -60,3 +60,6 @@ function playBeep(){
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
+function khFunction() {
+  //does nothing atm when the kh value field is clicked on
+}
