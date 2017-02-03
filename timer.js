@@ -25,9 +25,10 @@ function RstLbls() {
   function wattsFunction(){
   var x = document.getElementById("widgets").value;
   var y = document.getElementById("seconds").value;
+  var k = document.getElementById("khVal").value;
   var result = "";
   var results = "";
-  var time_widgets = 3600 * x;
+  var time_widgets = 3600 * x * k;
   var results = time_widgets / y;
   var result = round(results, 2);
   //result = Math.round((time_widgets / y) * 100) / 100  //returns 00.00
