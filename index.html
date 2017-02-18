@@ -149,8 +149,10 @@ StpBttnPst.style.display = 'none';
 <OPTION VALUE=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 (clock radio)
 </SELECT></P>
 </TD>
-<TD VALIGN=top>
-<p align=center><B>Amount used per day</B>
+<!-- <TD VALIGN=top> -->
+<TD>
+<!-- <p align=center><B>Amount used per day</B>  -->
+<p align=left><B>Amount used per day</B>
 
 <br><SELECT NAME=hours onchange="calculate()">
 <OPTION VALUE="0.0167">1 minute/day
@@ -187,7 +189,8 @@ StpBttnPst.style.display = 'none';
 <TR>
 <TD style="border-right:1px solid gray">
 
-<p align=center><B>Cost of Electricity (per kWh)</B>
+<!-- <p align=center><B>Cost of Electricity (per kWh)</B> -->
+<p align=left><B>Cost of Electricity (per kWh)</B>
 
 <br>
 <SELECT NAME=rate id=rateField onchange="theVal=this.options[this.selectedIndex].value; if (theVal=='cost') window.location='cost.html'; else if (theVal=='other') chooseCustom('How much are you paying, in cents per kWh? (check your bill)','15',this.id,lastRate); else {lastRate=this.selectedIndex; calculate();}">
@@ -220,8 +223,9 @@ StpBttnPst.style.display = 'none';
 </P>
 </TD>
 <TD>
+<!-- <p align=center><B>Days used per month</B> -->
 <p align=center><B>Days used per month</B>
-
+	
 <br><SELECT NAME=days onchange="calculate()">
 <OPTION VALUE=1>1
 <OPTION VALUE=2>2
@@ -263,7 +267,8 @@ StpBttnPst.style.display = 'none';
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=8>
 <TR>
-<TD VALIGN=top>
+<!-- <TD VALIGN=top> -->
+<TD>
 	<TABLE BORDER=0 style="font:11px Arial; border:2px solid navy">
 	<TR>
 		<TD ALIGN=right>Kilowatt Hours used:</TD>
@@ -280,7 +285,8 @@ StpBttnPst.style.display = 'none';
 	</TABLE>
 </TD>
 
-<TD VALIGN=top style="font:10px Arial" width=240>
+<!-- <TD VALIGN=top style="font:10px Arial" width=240> -->
+<TD style="font:10px Arial" width=240>
 <P><B>Estimate Usage</B>
 <br>(1) Your <i>particular</i> computer, TV, etc. could use more or less energy than the <i>samples</i> listed here.
 <br>(2) Some things use more or less energy based on how high you crank them (e.g. ovens, stereos).
