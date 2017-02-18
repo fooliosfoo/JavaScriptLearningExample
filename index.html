@@ -13,8 +13,8 @@
 body {
   width: 300px;
   height: 500px;
-  /*margin: 0px auto;
-  padding: 10px;*/
+  margin: 0px auto;
+  padding: 10px;
   font: 10pt/1.5em Helvetica,"Helvetica neue", Arial, sans-serif;
   /*border-style:solid;
   border-width:2px;*/
@@ -69,90 +69,19 @@ StpBttnPst.style.display = 'none';
 
 <!--<H2 align=center style="font-family:Tahoma,Arial; color:#060">Calculate your electric cost</H2>-->
 
-	<!-- <TABLE BORDER=0 CELLSPACING=1 CELLPADDING=5 style="font:11px Arial" align=center> -->
-	<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=5 style="font:11px Arial">
+	<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=5 style="font:11px Arial" align=center>
 	<TR>
-	<TD style="border-right:1px solid gray" >
-	<!-- <TD VALIGN=top style="border-right:1px solid gray" align=center> -->
+	<TD VALIGN=top style="border-right:1px solid gray" align=center>
 	<B>Device / Wattage</B> <span style="font-size:10px">(wH/hr)</span>
 
-<br><SELECT NAME=watts onchange="calculate()">
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>COOLING
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=3500 SELECTED>3500 (Central AC)
-<OPTION VALUE=1440>1440 (Window unit AC)
-<OPTION VALUE=900>&nbsp;&nbsp;900 (Window unit AC)
-<OPTION VALUE=500>&nbsp;&nbsp;500 (Window unit AC) <!-- Direct-measurement of both the new & old units in 2605-A -->
-<OPTION VALUE=750>&nbsp;&nbsp;375 (Central AC, fan only) <!-- Avg. of BC Hydro (see Cooling Questions) and 2103 measurement -->
-<OPTION VALUE=100>&nbsp;&nbsp;100 (floor fan/box fan)
-<OPTION VALUE=95>&nbsp;&nbsp;&nbsp;&nbsp;95 (52" ceiling fan)
-<OPTION VALUE=75>&nbsp;&nbsp;&nbsp;&nbsp;75 (48" ceiling fan)
-<OPTION VALUE=55>&nbsp;&nbsp;&nbsp;&nbsp;55 (36" ceiling fan)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>HEATING
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=26471>26500 (Elec.Furnace,2000sf)
-<OPTION VALUE=7941>&nbsp;&nbsp;7941 (Elec.Furnace,1000sf)
-<OPTION VALUE=1440>&nbsp;&nbsp;1440 (Electric space heater)
-<OPTION VALUE=900>&nbsp;&nbsp;&nbsp;&nbsp;900 (Electric space heater)
-<OPTION VALUE=600>&nbsp;&nbsp;&nbsp;&nbsp;600 (Electric space heater)
-<OPTION VALUE=750>&nbsp;&nbsp;&nbsp;&nbsp;750 (Gas furnace, blower)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>MAJOR APPLIANCES
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=3800>3800 (water heater, electric)
-<OPTION VALUE=2000>2000 (electric oven, 350 degrees)
-<OPTION VALUE=1200>1200 (Dishwasher, drying cycle)
-<OPTION VALUE=200> &nbsp;200 (Dishwasher, no heating or drying)
-<OPTION VALUE=200>&nbsp;200 (Refrigerator, YR &lt;1986)
-<OPTION VALUE=71.9>&nbsp;&nbsp;&nbsp;72 (Refrigerator, YR 2001+)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>LIGHTS
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=100>100 (100-watt light bulb)
-<OPTION VALUE=60>&nbsp;&nbsp;60 (60-watt light bulb)
-<OPTION VALUE=25>&nbsp;&nbsp;25 (CFL light, 100-watt equiv.)
-<OPTION VALUE=18>&nbsp;&nbsp;18 (CFL light, 60-watt equiv.)
-<OPTION VALUE=5>&nbsp;&nbsp;&nbsp;&nbsp;5 (night light)
-<OPTION VALUE="0.5">&nbsp;&nbsp;&nbsp;&nbsp;0.5 (LED night light)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>COMPUTERS
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=200>200 (Computer + 17" CRT)
-<OPTION VALUE=150>150 (Computer + 17" LCD)
-<OPTION VALUE=45>&nbsp;&nbsp;45 (laptop computer)
-<OPTION VALUE=90>&nbsp;&nbsp;90 (17" CRT monitor)
-<OPTION VALUE=40>&nbsp;&nbsp;40 (17" LCD monitor)
-<OPTION VALUE=10>&nbsp;&nbsp;10 (Sleeping comp.+monitor)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>TV & VIDEO GAMES
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=340>340 (50-56" Plasma television)
-<OPTION VALUE=260>260 (50-56" LCD television)
-<OPTION VALUE=170>170 (50-56" DLP television)
-<OPTION VALUE=270>270 (42" Plasma television)
-<OPTION VALUE=210>210 (42" LCD television)
-<OPTION VALUE=125>125 (32" LCD television)
-<OPTION VALUE=75>&nbsp;75 (19" CRT television)
-<OPTION VALUE=45>&nbsp;45 (HD Cable box)
-<OPTION VALUE=194>194 (PS3)
-<OPTION VALUE=185>185 (XBox 360)
-<OPTION VALUE=70>&nbsp;&nbsp;70 (XBox original, not 360)
-<OPTION VALUE=30>&nbsp;&nbsp;30 (PlayStation 2)
-<OPTION VALUE=18>&nbsp;&nbsp;18 (Nintendo Wii)
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=0>OTHER
-<OPTION VALUE=0>----------------------
-<OPTION VALUE=1440>1440 (toaster or microwave)
-<OPTION VALUE=900>&nbsp;&nbsp;900 (coffee maker)
-<OPTION VALUE=4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 (clock radio)
-</SELECT>
+<!-- <br><SELECT NAME=watts onchange="calculate()"> -->
+<SELECT NAME=watts id=wattsField onchange="theVal=this.options[this.selectedIndex].value; if (theVal=='cost') window.location='cost.html'; else if (theVal=='other') chooseCustom('How much are you paying, in cents per kWh? (check your bill)','15',this.id,lastRate); else {lastRate=this.selectedIndex; calculate();}">
+<OPTION VALUE=document.getElementById("kw").value>------
+<OPTION VALUE=other>Enter Watts
+</SELECT></P>
 </TD>
-<!-- <TD VALIGN=top> -->
-<TD>
-<!-- <p align=center><B>Amount used per day</B>  -->
-<B>Amount used per day</B>
+<TD VALIGN=top>
+<p align=center><B>Amount used per day</B>
 
 <br><SELECT NAME=hours onchange="calculate()">
 <OPTION VALUE="0.0167">1 minute/day
@@ -183,14 +112,13 @@ StpBttnPst.style.display = 'none';
 <OPTION VALUE=22>22 hrs./day
 <OPTION VALUE=23>23 hrs./day
 <OPTION VALUE=24 SELECTED>24 hrs./day
-</SELECT>
+</SELECT></P>
 </TD>
 </TR>
 <TR>
 <TD style="border-right:1px solid gray">
 
-<!-- <p align=center><B>Cost of Electricity (per kWh)</B> -->
-<B>Cost of Electricity (per kWh)</B>
+<p align=center><B>Cost of Electricity (per kWh)</B>
 
 <br>
 <SELECT NAME=rate id=rateField onchange="theVal=this.options[this.selectedIndex].value; if (theVal=='cost') window.location='cost.html'; else if (theVal=='other') chooseCustom('How much are you paying, in cents per kWh? (check your bill)','15',this.id,lastRate); else {lastRate=this.selectedIndex; calculate();}">
@@ -220,11 +148,11 @@ StpBttnPst.style.display = 'none';
 
 </select>
 
+</P>
 </TD>
 <TD>
-<!-- <p align=center><B>Days used per month</B> -->
-<B>Days used per month</B>
-	
+<p align=center><B>Days used per month</B>
+
 <br><SELECT NAME=days onchange="calculate()">
 <OPTION VALUE=1>1
 <OPTION VALUE=2>2
@@ -257,7 +185,8 @@ StpBttnPst.style.display = 'none';
 <OPTION VALUE=29>29
 <OPTION VALUE=30>30
 <OPTION VALUE=31 SELECTED>31
-</SELECT>
+<!-- <OPTION VALUE="30.4375">30.4375 -->
+</SELECT></P>
 </TD>
 </TR>
 </TABLE>
@@ -266,8 +195,7 @@ StpBttnPst.style.display = 'none';
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=8>
 <TR>
-<!-- <TD VALIGN=top> -->
-<TD>
+<TD VALIGN=top>
 	<TABLE BORDER=0 style="font:11px Arial; border:2px solid navy">
 	<TR>
 		<TD ALIGN=right>Kilowatt Hours used:</TD>
@@ -284,8 +212,7 @@ StpBttnPst.style.display = 'none';
 	</TABLE>
 </TD>
 
-<!-- <TD VALIGN=top style="font:10px Arial" width=240> -->
-<TD style="font:10px Arial" width=240>
+<TD VALIGN=top style="font:10px Arial" width=240>
 <P><B>Estimate Usage</B>
 <br>(1) Your <i>particular</i> computer, TV, etc. could use more or less energy than the <i>samples</i> listed here.
 <br>(2) Some things use more or less energy based on how high you crank them (e.g. ovens, stereos).
@@ -352,6 +279,7 @@ function chooseCustom(message,theDefault,field,previousValue) {
 	else { theField.selectedIndex = previousValue;}
 }    
 </script>
+    
 <!--    
 END-->
  
