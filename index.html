@@ -37,7 +37,7 @@ if ('serviceWorker' in navigator) {
 <body>
 	
 <div style="border-radius:12px; border:1px solid silver; background:#ccd9ff; margin:15px">
-<h1>Watt Load Check</h1>
+<h1>Watt Load Check v2</h1>
 <h2><pre>1PH 1S/2S Kh<input type="text" autofocus size="3" maxlength="3" id="khVal" name="kh" class="khtxtbx" value="1.0" onchange = "khFunction();" onkeypress = "this.onchange();" oninput    = "this.onchange();">
 </pre></h2>
 <hr />
@@ -144,7 +144,8 @@ function khFunction() {
 
 <!-- <br><SELECT NAME=watts onchange="calculate()"> -->
 <SELECT NAME=watts id=wattsField onchange="theVal=this.options[this.selectedIndex].value; if (theVal=='cost') window.location='cost.html'; else if (theVal=='other') chooseCustom('How much are you paying, in cents per kWh? (check your bill)','15',this.id,lastRate); else {lastRate=this.selectedIndex; calculate();}">
-<OPTION VALUE=kw>------
+<script>document.getElementById('kwVal').value = kw;</script>
+<OPTION VALUE="kwVal">------
 <OPTION VALUE=other>Enter Watts
 </SELECT></P>
 </TD>
