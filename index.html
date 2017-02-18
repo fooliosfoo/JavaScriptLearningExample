@@ -144,7 +144,7 @@ function khFunction() {
 
 <!-- <br><SELECT NAME=watts onchange="calculate()"> -->
 <SELECT NAME=watts id=wattsField onchange="theVal=this.options[this.selectedIndex].value; if (theVal=='cost') window.location='cost.html'; else if (theVal=='other') chooseCustom('How much are you paying, in cents per kWh? (check your bill)','15',this.id,lastRate); else {lastRate=this.selectedIndex; calculate();}">
-<OPTION VALUE=document.getElementById("kw").value>------
+<OPTION VALUE=kw>------
 <OPTION VALUE=other>Enter Watts
 </SELECT></P>
 </TD>
