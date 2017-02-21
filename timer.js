@@ -83,7 +83,7 @@ kwhTot = kwhT * hours * days * rate;
     kwpermonth = kwhT * hours * days;
 	costpermonth = kwhTot;
 	costperyear = costpermonth*12;
-	document.calculator.kwh.value=kwpermonth.toFixed(0);
+	document.calculator.kwh.value=kwpermonth.toFixed();
 	document.calculator.costpermonth.value = round(costpermonth, 2);
 	document.calculator.costperyear.value = round(costperyear, 2);
 }
